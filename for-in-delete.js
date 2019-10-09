@@ -39,9 +39,15 @@
   Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 */
 
-function showValues( obj ) {
-  //Code Here
+function showValues(obj) {
+  let arr = [];
+  for (var keys in obj) {
+    arr.push(obj[keys]) 
+  }
+    return arr.join('')
+
 }
+
 
 
 
@@ -53,7 +59,13 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+function greaterThan10 (object){
+  for (var keys in object){
+  if (object[keys] > 10)
+  object[keys] = 0
+  }
+  return object
+}
 
 
 
@@ -65,7 +77,12 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+function double (obj){
+  for (var keys in obj){
+  obj[keys] = obj[ keys] * 2
+}
+return obj
+}
 
 
 
@@ -79,7 +96,15 @@ function showValues( obj ) {
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
 
-//Code Here
+function secrets(obj){
+  let newString = ""
+ for (var keys in obj){
+   if (keys.startsWith("sh")){
+  newString += obj[keys];
+  } 
+ }
+ return newString
+}
 
 
 
@@ -110,8 +135,12 @@ function showValues( obj ) {
   Delete the property password and return the object.
 */
 
-//Code Here
-
+function removePassword (obj){
+  for (var key in obj){
+  delete obj.password
+ }
+ return obj
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -129,8 +158,11 @@ var deleteTheBigNumbers = {
   Write a for in loop that deletes every property from the object deleteTheBigNumbers whose value is greater than 100.
 */
 
-//Code Here
-
+for (let key  in deleteTheBigNumbers){
+  if (deleteTheBigNumbers[key] > 100){
+  delete deleteTheBigNumbers[key]
+    }
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -142,7 +174,14 @@ var deleteTheBigNumbers = {
   Return the updated object.
 */
 
-//Code Here
+function startsWithK (object){
+  for  (let key in object){
+    if (key.startsWith('k')){
+      delete  object[key]
+    }
+  }
+  return object
+}
 
 
 
@@ -157,6 +196,13 @@ var deleteTheBigNumbers = {
   (hint: the method includes() may be of use...)
 */
 
-//Code Here
+function hiddenTreasure (obj){
+  for (let key in obj){
+    if (!obj[key].includes('treasure')){
+    delete obj[key]
+    }
+  }
+  return obj
+}
 
 
